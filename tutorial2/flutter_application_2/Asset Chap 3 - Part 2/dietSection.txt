@@ -1,0 +1,90 @@
+Container(
+        margin: const EdgeInsets.only(left: 20), //  Add left margin so align nicely with title
+        height: 260, //  Adjusted height to 260 for better space
+        child: ListView.separated(
+          itemCount: diets.length,
+          scrollDirection: Axis.horizontal,
+          padding: const EdgeInsets.only(right: 20), // Only right padding, left handled above
+          separatorBuilder: (context, index) => const SizedBox(width: 20),
+          itemBuilder: (context, index) {
+            return Container(
+              width: 210,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black12.withOpacity(0.05),
+                    blurRadius: 10,
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(height: 20),
+                  Image.asset(
+                    diets[index].iconPath,
+                    height: 80,
+                    width: 80,
+                    fit: BoxFit.contain,
+                  ),
+                  const SizedBox(height: 15),
+                  Text(
+                    diets[index].name,
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                  Text(
+                    diets[index].level,
+                    style: const TextStyle(
+                      color: Colors.grey,
+                      fontSize: 14,
+                    ),
+                  ),
+                  Text(
+                    diets[index].duration,
+                    style: const TextStyle(
+                      color: Colors.grey,
+                      fontSize: 14,
+                    ),
+                  ),
+                  Text(
+                    diets[index].calorie,
+                    style: const TextStyle(
+                      color: Colors.grey,
+                      fontSize: 14,
+                    ),
+                  ),
+                  const Spacer(),
+                  Container(
+                    width: double.infinity,
+                    height: 40,
+                    decoration: const BoxDecoration(
+                      color: Colors.blueGrey,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(20),
+                        bottomRight: Radius.circular(20),
+                      ),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "View",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
+      ),
