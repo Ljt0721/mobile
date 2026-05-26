@@ -10,6 +10,7 @@ Each tutorial folder contains a standalone Flutter app, along with several scree
 - `tutorial2/`
 - `tutorial3/`
 - `tutorial4/`
+- `tutorial5/`
 
 More tutorials will be added continuously as the course progresses.
 
